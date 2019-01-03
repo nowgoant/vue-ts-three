@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Provide } from 'vue-property-decorator';
+import { Component, Vue, Provide, Watch } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import * as THREE from 'three';
 
@@ -50,5 +50,8 @@ export default class Home extends Vue {
 
     animate();
   }
+
+  @Watch('child')
+  onChildChanged(val: string, oldVal: string) {}
 }
 </script>
